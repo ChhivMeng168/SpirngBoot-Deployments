@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org">
+
+	<!-- Head Start -->
+	<head th:replace="~{base::head}"></head>
+	<!-- Head Start -->
+
+<body>
+    <!-- Navbar Start -->
+    <div th:replace="~{base :: navbar(about='active')}"></div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div th:replace="~{base :: Header(text='About Us')}"></div>
+    <!-- Page Header End -->
+
+    <!-- About Start -->
+	<div class="container-fluid py-5" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);" data-aos="fade-up" data-aos-duration="1000">
+    <div class="container">
+        <!-- Section Title -->
+        <div class="text-center mb-5" data-aos="fade-in" data-aos-delay="200">
+            <h4 class="text-danger text-uppercase" style="letter-spacing: 4px;">About Us</h4>
+            <h1 class="display-4 font-weight-bold">Dedicated Since 1950</h1>
+        </div>
+
+        <!-- Main Row -->
+        <div class="row align-items-center mb-5">
+            <!-- Image -->
+            <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right" data-aos-delay="400">
+                <div class="shadow rounded overflow-hidden">
+                    <img src="img/about.png" class="w-100" style="object-fit: cover; height: 100%;">
+                </div>
+            </div>
+
+            <!-- Text Content -->
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="600">
+                <div class="bg-white p-5 rounded shadow-sm">
+                    <h2 class="mb-3 text-primary" data-aos="fade-up" data-aos-delay="800">Our Story</h2>
+                    <p class="mb-3 text-muted" data-aos="fade-up" data-aos-delay="1000">Since 1950, we’ve been committed to excellence. Our journey began with a vision to serve our community with integrity and innovation. Over the decades, we have grown while keeping our core values intact.</p>
+
+                    <h2 class="mb-3 text-success" data-aos="fade-up" data-aos-delay="1200">Our Vision</h2>
+                    <p class="mb-4 text-muted" data-aos="fade-up" data-aos-delay="1400">We aim to empower communities and create sustainable solutions that positively impact lives. Every project we undertake reflects our dedication and forward-thinking approach.</p>
+
+                    <div class="d-flex flex-column gap-2 mb-4">
+                        <h5 data-aos="fade-up" data-aos-delay="1600"><i class="fa fa-check-circle text-primary mr-2"></i>Commitment to Quality</h5>
+                        <h5 data-aos="fade-up" data-aos-delay="1800"><i class="fa fa-check-circle text-primary mr-2"></i>Innovative Solutions</h5>
+                        <h5 data-aos="fade-up" data-aos-delay="2000"><i class="fa fa-check-circle text-primary mr-2"></i>Customer Satisfaction</h5>
+                        <h5 data-aos="fade-up" data-aos-delay="2200"><i class="fa fa-check-circle text-primary mr-2"></i>Community Engagement</h5>
+                        <h5 data-aos="fade-up" data-aos-delay="2400"><i class="fa fa-check-circle text-primary mr-2"></i>Global Outreach</h5>
+                    </div>
+
+                    <a href="#" class="btn btn-danger font-weight-bold py-2 px-4" data-aos="fade-up" data-aos-delay="2600">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics Row -->
+        <div class="row text-center mb-5">
+            <div class="col-md-3 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="400">
+                <h2 class="text-primary font-weight-bold">75+</h2>
+                <p class="text-muted">Years of Experience</p>
+            </div>
+            <div class="col-md-3 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="600">
+                <h2 class="text-success font-weight-bold">500+</h2>
+                <p class="text-muted">Projects Completed</p>
+            </div>
+            <div class="col-md-3 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="800">
+                <h2 class="text-warning font-weight-bold">100K+</h2>
+                <p class="text-muted">Happy Clients</p>
+            </div>
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="1000">
+                <h2 class="text-danger font-weight-bold">50+</h2>
+                <p class="text-muted">Awards & Recognitions</p>
+            </div>
+        </div>
+
+        <!-- Team Highlights -->
+        <div class="text-center mb-5" data-aos="fade-in" data-aos-delay="200">
+            <h2 class="mb-4 text-primary">Meet Our Team</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card shadow-sm">
+                        <img src="img/testimonial-3.jpg" class="card-img-top" alt="Team Member">
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-1">John Doe</h5>
+                            <p class="card-text text-muted">CEO & Founder</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card shadow-sm">
+                        <img src="img/testimonial-2.jpg" class="card-img-top" alt="Team Member">
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-1">Jane Smith</h5>
+                            <p class="card-text text-muted">Chief Operations</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="800">
+                    <div class="card shadow-sm">
+                        <img src="img/testimonial-1.jpg" class="card-img-top" alt="Team Member">
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-1">Alex Brown</h5>
+                            <p class="card-text text-muted">Head of Design</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="text-center" data-aos="fade-in" data-aos-delay="200">
+            <h3 class="mb-3" data-aos="fade-up" data-aos-delay="400">Join Us on Our Journey</h3>
+            <p class="text-muted mb-4" data-aos="fade-up" data-aos-delay="600">Be part of a team that makes a difference and creates a legacy that lasts for generations.</p>
+            <a href="#" class="btn btn-primary btn-lg font-weight-bold" data-aos="fade-up" data-aos-delay="800">Get Involved</a>
+        </div>
+    </div>
+	</div>
+	<!-- About End -->
+	
+    <!-- Footer Start -->
+    <div th:replace="~{base::Footer}"></div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <div th:replace="~{base::script}"></div>
+</body>
+</html>

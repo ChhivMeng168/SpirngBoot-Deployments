@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org">
+
+<!-- Head Start -->
+<head th:fragment="head">
+    <meta charset="utf-8">
+    <title>KOPPEE - Coffee Shop HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free Website Template" name="keywords">
+    <meta content="Free Website Template" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- AOS Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.min.css" rel="stylesheet">
+    <style>
+select, option {
+    color: black;
+  }
+</style>
+</head>
+<!-- Head End -->
+
+
+<body>
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0 nav-bar" 
+         th:fragment="navbar"
+         th:with="home=${home}?:'', about=${about}?:'', service=${service}?:'', menu=${menu}?:'', reservation=${reservation}?:'', testimonial=${testimonial}?:'', contact=${contact}?:''"
+         data-aos="fade-down" data-aos-duration="1000">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-none py-3" style="position: relative;">
+            <!-- Logo -->
+            <a th:href="@{/home}" class="navbar-brand px-lg-4 m-0">
+                <h1 class="m-0 display-4 text-uppercase text-white" 
+                    style="margin:0; font-weight:700; color:#fff; transition: color 0.3s;" 
+                    onmouseover="this.style.color='#FFD700';" 
+                    onmouseout="this.style.color='#ffffff';">Coffee</h1>
+            </a>
+            <!-- Mobile Toggle -->
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav ml-auto p-4" style="display:flex; align-items:center; gap:10px;">
+                    
+                    <a th:href="@{/home}" th:class="'nav-item nav-link ' + ${home}" 
+                       style="color:#fff; transition: color 0.3s;" 
+                       onmouseover="this.style.color='#FFD700';" 
+                       onmouseout="this.style.color='#ffffff';">Home</a>
+
+                    <a th:href="@{/about}" th:class="'nav-item nav-link ' + ${about}" 
+                       style="color:#fff; transition: color 0.3s;" 
+                       onmouseover="this.style.color='#FFD700';" 
+                       onmouseout="this.style.color='#ffffff';">About</a>
+
+                    <a th:href="@{/service}" th:class="'nav-item nav-link ' + ${service}" 
+                       style="color:#fff; transition: color 0.3s;" 
+                       onmouseover="this.style.color='#FFD700';" 
+                       onmouseout="this.style.color='#ffffff';">Service</a>
+
+                    <a th:href="@{/menu}" th:class="'nav-item nav-link ' + ${menu}" 
+                       style="color:#fff; transition: color 0.3s;" 
+                       onmouseover="this.style.color='#FFD700';" 
+                       onmouseout="this.style.color='#ffffff';">Menu</a>
+
+                    <!-- Dropdown Inline -->
+                    <div class="nav-item dropdown" style="position:relative;">
+                        <a href="#" th:class="'nav-link dropdown-toggle ' + (${reservation} ?: '') + ' ' + (${testimonial} ?: '')" 
+                           style="color:#fff; transition: color 0.3s;" 
+                           onmouseover="this.style.color='#FFD700';" 
+                           onmouseout="this.style.color='#ffffff';" 
+                           data-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu" style="position:absolute; background:#222; display:none; margin-top:0.5rem; border-radius:0.25rem; min-width:150px;">
+                            <a th:href="@{/reservation}" th:class="'dropdown-item ' + ${reservation}" 
+                               style="color:#fff; padding:0.5rem 1rem; display:block; text-decoration:none;" 
+                               onmouseover="this.style.color='#FFD700';" 
+                               onmouseout="this.style.color='#ffffff';">Reservation</a>
+                            <a th:href="@{/testimonial}" th:class="'dropdown-item ' + ${testimonial}" 
+                               style="color:#fff; padding:0.5rem 1rem; display:block; text-decoration:none;" 
+                               onmouseover="this.style.color='#FFD700';" 
+                               onmouseout="this.style.color='#ffffff';">Testimonial</a>
+                        </div>
+                    </div>
+
+                    <a th:href="@{/contact}" th:class="'nav-item nav-link ' + ${contact}" 
+                       style="color:#fff; transition: color 0.3s;" 
+                       onmouseover="this.style.color='#FFD700';" 
+                       onmouseout="this.style.color='#ffffff';">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Dropdown toggle JS -->
+    <script>
+        document.querySelectorAll('.dropdown-toggle').forEach(function(el) {
+            el.addEventListener('click', function(e){
+                e.preventDefault();
+                let menu = el.nextElementSibling;
+                menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+            });
+            document.addEventListener('click', function(e){
+                if (!el.contains(e.target)) {
+                    el.nextElementSibling.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div class="page-header" 
+         th:fragment="Header" 
+         th:with="text=${text}" 
+         style="position: relative; min-height: 400px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; overflow: hidden;"
+         data-aos="fade-up" data-aos-duration="1200">
+
+        <!-- Background Image -->
+        <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: url('img/header-bg.jpg') center center/cover no-repeat; z-index:1;"></div>
+
+        <!-- Gradient Overlay -->
+        <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index:2;"></div>
+
+        <!-- Header Content -->
+        <div style="position: relative; z-index:3;">
+            <h1 th:text="${text}" style="font-size: 3rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem; color: #fff;" data-aos="zoom-in" data-aos-delay="200">About Us</h1>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem;" data-aos="fade-in" data-aos-delay="400">Learn more about our story, passion, and commitment to quality coffee.</p>
+
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb" data-aos="fade-in" data-aos-delay="600">
+                <ol style="display: flex; justify-content: center; list-style: none; padding: 0; margin: 0; background: transparent;">
+                    <li style="margin-right: 0.5rem; display: flex; align-items: center;">
+                        <a href="/" style="color: #fff; text-decoration: none; transition: color 0.3s;" 
+                           onmouseover="this.style.color='#FFD700';" 
+                           onmouseout="this.style.color='#fff';">Home</a>
+                        <span style="margin: 0 0.5rem;">/</span>
+                    </li>
+                    <li th:text="${text}" style="color: #fff; font-weight: 500; display: flex; align-items: center;">About Us</li>
+                </ol>
+            </nav>
+        </div>
+
+        <!-- Bottom Shadow -->
+        <div style="position: absolute; bottom: 0; width: 100%; height: 80px; background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);"></div>
+    </div>
+    <!-- Page Header End -->
+
+<!-- Footer Start -->
+<div th:fragment="Footer" 
+     style="position: relative; width: 100%; background: #111; color: #fff; padding: 4rem 1rem 2rem; font-family: Arial, sans-serif;">
+
+    <!-- Footer Content -->
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; max-width: 1200px; margin: 0 auto;">
+
+        <!-- Get In Touch -->
+        <div style="flex: 1 1 220px;">
+            <h4 style="text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; color: #fff;">Get In Touch</h4>
+            <p style="margin: 0.3rem 0; color: #ccc;"><i class="fa fa-map-marker-alt" style="margin-right: 0.5rem; color: #ffd700;"></i>123 Street, New York, USA</p>
+            <p style="margin: 0.3rem 0; color: #ccc;"><i class="fa fa-phone-alt" style="margin-right: 0.5rem; color: #ffd700;"></i>+012 345 67890</p>
+            <p style="margin: 0.3rem 0; color: #ccc;"><i class="fa fa-envelope" style="margin-right: 0.5rem; color: #ffd700;"></i>info@example.com</p>
+        </div>
+
+        <!-- Follow Us -->
+        <div style="flex: 1 1 220px;">
+            <h4 style="text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; color: #fff;">Follow Us</h4>
+            <p style="margin: 0 0 0.5rem 0; color: #ccc;">Amet elitr vero magna sed ipsum sit kasd sea elitr lorem rebum</p>
+            <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+                <a href="#" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid #fff; color: #fff; text-decoration: none; transition: 0.3s;" 
+                   onmouseover="this.style.backgroundColor='#ffd700'; this.style.color='#111';" 
+                   onmouseout="this.style.backgroundColor='transparent'; this.style.color='#fff';"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid #fff; color: #fff; text-decoration: none; transition: 0.3s;" 
+                   onmouseover="this.style.backgroundColor='#ffd700'; this.style.color='#111';" 
+                   onmouseout="this.style.backgroundColor='transparent'; this.style.color='#fff';"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid #fff; color: #fff; text-decoration: none; transition: 0.3s;" 
+                   onmouseover="this.style.backgroundColor='#ffd700'; this.style.color='#111';" 
+                   onmouseout="this.style.backgroundColor='transparent'; this.style.color='#fff';"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid #fff; color: #fff; text-decoration: none; transition: 0.3s;" 
+                   onmouseover="this.style.backgroundColor='#ffd700'; this.style.color='#111';" 
+                   onmouseout="this.style.backgroundColor='transparent'; this.style.color='#fff';"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <!-- Open Hours -->
+        <div style="flex: 1 1 220px;">
+            <h4 style="text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; color: #fff;">Open Hours</h4>
+            <p style="margin: 0.3rem 0; color: #ccc;"><strong>Mon - Fri:</strong> 8:00 AM - 8:00 PM</p>
+            <p style="margin: 0.3rem 0; color: #ccc;"><strong>Sat - Sun:</strong> 2:00 PM - 8:00 PM</p>
+        </div>
+
+        <!-- Newsletter -->
+        <div style="flex: 1 1 220px;">
+            <h4 style="text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; color: #fff;">Newsletter</h4>
+            <p style="margin: 0 0 0.5rem 0; color: #ccc;">Amet elitr vero magna sed ipsum sit kasd sea elitr lorem rebum</p>
+            <div style="display: flex; width: 100%;">
+                <input type="email" placeholder="Your Email" style="flex: 1; padding: 0.7rem; border: 1px solid #fff; background: transparent; color: #fff; outline: none;">
+                <button style="padding: 0.7rem 1rem; background: #007bff; border: none; color: #fff; font-weight: bold; cursor: pointer; transition: 0.3s;" 
+                        onmouseover="this.style.backgroundColor='#0056b3';" 
+                        onmouseout="this.style.backgroundColor='#007bff';">Sign Up</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 2rem; padding-top: 1rem;">
+        <p style="margin: 0 0 0.5rem 0; color: #fff;">Copyright &copy; <a href="#" style="font-weight: bold; color: #fff; text-decoration: none;">Domain</a>. All Rights Reserved.</p>
+        <p style="margin: 0; color: #fff;">Designed by <a href="https://htmlcodex.com" style="font-weight: bold; color: #fff; text-decoration: none;">HTML Codex</a></p>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <div th:fragment="script" th:remove="tag">
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script th:src="@{/lib/easing/easing.min.js}"></script>
+        <script th:src="@{/lib/waypoints/waypoints.min.js}"></script>
+        <script th:src="@{/lib/owlcarousel/owl.carousel.min.js}"></script>
+        <script th:src="@{/lib/tempusdominus/js/moment.min.js}"></script>
+        <script th:src="@{/lib/tempusdominus/js/moment-timezone.min.js}"></script>
+        <script th:src="@{/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js}"></script>
+
+        <!-- AOS JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 1000, // Default duration for animations
+                once: true,     // Animations happen only once
+                offset: 100     // Trigger animations 100px before element is in view
+            });
+        </script>
+
+        <!-- Contact Javascript File -->
+        <script th:src="@{/mail/jqBootstrapValidation.min.js}"></script>
+        <script th:src="@{/mail/contact.js}"></script>
+
+        <!-- Template Javascript -->
+        <script th:src="@{/js/main.js}"></script>
+    </div>
+</body>
+</html>

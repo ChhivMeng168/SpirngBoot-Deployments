@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org">
+    
+	<!-- Head Start -->
+	<head th:replace="~{base::head}"></head>
+	<!-- Head Start -->
+	
+<body>
+    <!-- Navbar Start -->
+    <div th:replace="~{base :: navbar(testimonial='active')}"></div>
+    <!-- Navbar End -->
+
+	<!-- Page Header Start -->
+    <div th:replace="~{base :: Header(text='Testimonial')}"></div>
+    <!-- Page Header End -->
+
+
+	<!-- Testimonial Start -->
+	<div class="container-fluid" style="padding: 5rem 1rem; background: #f9f9f9; color: #111; overflow: hidden; position: relative;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto;">
+
+        <!-- Section Title -->
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h4 style="color: #007bff; text-transform: uppercase; letter-spacing: 5px; margin-bottom: 0.5rem;">Testimonial</h4>
+            <h1 style="font-size: 3rem; margin: 0; color: #111;">Our Clients Say</h1>
+        </div>
+
+        <!-- Carousel Wrapper -->
+        <div style="overflow: hidden; position: relative;">
+            <div style="display: flex; gap: 2rem; animation: scroll-left 20s linear infinite;">
+
+                <!-- Testimonial Items -->
+                <div style="flex: 0 0 300px; background: #fff; border-radius: 10px; padding: 2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <img src="img/testimonial-1.jpg" alt="" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                        <div style="margin-left: 1rem;">
+                            <h4 style="margin: 0; color: #111;">Client Name</h4>
+                            <i style="color: #777;">Profession</i>
+                        </div>
+                    </div>
+                    <p style="margin: 0; color: #555; line-height: 1.6;">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor tempor ipsum sanct clita.</p>
+                </div>
+
+                <div style="flex: 0 0 300px; background: #fff; border-radius: 10px; padding: 2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <img src="img/testimonial-2.jpg" alt="" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                        <div style="margin-left: 1rem;">
+                            <h4 style="margin: 0; color: #111;">Client Name</h4>
+                            <i style="color: #777;">Profession</i>
+                        </div>
+                    </div>
+                    <p style="margin: 0; color: #555; line-height: 1.6;">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor tempor ipsum sanct clita.</p>
+                </div>
+
+                <div style="flex: 0 0 300px; background: #fff; border-radius: 10px; padding: 2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <img src="img/testimonial-3.jpg" alt="" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                        <div style="margin-left: 1rem;">
+                            <h4 style="margin: 0; color: #111;">Client Name</h4>
+                            <i style="color: #777;">Profession</i>
+                        </div>
+                    </div>
+                    <p style="margin: 0; color: #555; line-height: 1.6;">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor tempor ipsum sanct clita.</p>
+                </div>
+
+                <div style="flex: 0 0 300px; background: #fff; border-radius: 10px; padding: 2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <img src="img/testimonial-4.jpg" alt="" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                        <div style="margin-left: 1rem;">
+                            <h4 style="margin: 0; color: #111;">Client Name</h4>
+                            <i style="color: #777;">Profession</i>
+                        </div>
+                    </div>
+                    <p style="margin: 0; color: #555; line-height: 1.6;">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor tempor ipsum sanct clita.</p>
+                </div>
+
+                <!-- Duplicate items for seamless loop -->
+                <div style="flex: 0 0 300px; background: #fff; border-radius: 10px; padding: 2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <img src="img/testimonial-1.jpg" alt="" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                        <div style="margin-left: 1rem;">
+                            <h4 style="margin: 0; color: #111;">Client Name</h4>
+                            <i style="color: #777;">Profession</i>
+                        </div>
+                    </div>
+                    <p style="margin: 0; color: #555; line-height: 1.6;">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor tempor ipsum sanct clita.</p>
+                </div>
+
+                <div style="flex: 0 0 300px; background: #fff; border-radius: 10px; padding: 2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <img src="img/testimonial-2.jpg" alt="" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                        <div style="margin-left: 1rem;">
+                            <h4 style="margin: 0; color: #111;">Client Name</h4>
+                            <i style="color: #777;">Profession</i>
+                        </div>
+                    </div>
+                    <p style="margin: 0; color: #555; line-height: 1.6;">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor tempor ipsum sanct clita.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Inline CSS for scrolling -->
+        <style>
+            @keyframes scroll-left {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+            }
+        </style>
+    </div>
+</div>
+	<!-- Testimonial End -->
+
+
+    <!-- Footer Start -->
+    <div th:replace = "~{base::Footer}"></div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <div th:replace = "~{base::script}"></div>
+</body>
+
+</html>

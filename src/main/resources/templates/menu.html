@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org">
+
+	<!-- Head Start -->
+	<head th:replace="~{base::head}"></head>
+	<!-- Head Start -->
+
+<body>
+    <!-- Navbar Start -->
+    <div th:replace="~{base :: navbar(menu='active')}"></div>
+    <!-- Navbar End -->
+
+	<!-- Page Header Start -->
+    <div th:replace="~{base :: Header(text='Menu')}"></div>
+    <!-- Page Header End -->
+
+	<!-- Menu Start -->
+	<div style="width:100%; padding:3rem 0; background-color:#f8f9fa;" data-aos="fade-up" data-aos-duration="1000">
+    <div style="max-width:1140px; margin:0 auto; padding:0 15px;">
+        <div style="text-align:center; margin-bottom:3rem;" data-aos="fade-in" data-aos-delay="200">
+            <h4 style="color:#0d6efd; text-transform:uppercase; letter-spacing:5px;">Menu & Pricing</h4>
+            <h1 style="font-size:3rem;">Our Coffee Selection</h1>
+            <p style="color:#6c757d;" data-aos="fade-in" data-aos-delay="400">Explore our carefully curated selection of hot and cold coffees, crafted to perfection from premium beans.</p>
+        </div>
+
+        <!-- Hot Coffee -->
+        <h2 style="text-align:center; margin-bottom:2rem;" data-aos="fade-in" data-aos-delay="600">Hot Coffee</h2>
+        <div style="display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:center;">
+            <!-- Coffee Item 1 -->
+            <div style="flex:1 1 calc(33.333% - 1rem); background-color:#fff; padding:1.5rem; text-align:center; border-radius:0.5rem; box-shadow:0 0.25rem 0.5rem rgba(0,0,0,0.1); transition: all 0.3s ease; cursor:pointer;" 
+                 onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.2)';" 
+                 onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0.25rem 0.5rem rgba(0,0,0,0.1)';" data-aos="fade-right" data-aos-delay="800">
+                <img src="img/menu-1.jpg" alt="Black Coffee" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:1rem;">
+                <h5>Black Coffee</h5>
+                <p style="color:#6c757d;">Bold, rich, and aromatic. Perfect to energize your morning or during an afternoon break.</p>
+                <p><strong>Origin:</strong> Colombia | <strong>Roast:</strong> Medium</p>
+                <p><strong>Sizes:</strong> S $5 | M $6 | L $7</p>
+                <button style="background-color:#0d6efd; color:#fff; border:none; padding:0.25rem 0.75rem; font-size:0.875rem; border-radius:0.25rem; cursor:pointer;">Order Now</button>
+            </div>
+
+            <!-- Coffee Item 2 -->
+            <div style="flex:1 1 calc(33.333% - 1rem); background-color:#fff; padding:1.5rem; text-align:center; border-radius:0.5rem; box-shadow:0 0.25rem 0.5rem rgba(0,0,0,0.1); transition: all 0.3s ease; cursor:pointer;"
+                 onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.2)';" 
+                 onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0.25rem 0.5rem rgba(0,0,0,0.1)';" data-aos="fade-right" data-aos-delay="1000">
+                <img src="img/menu-2.jpg" alt="Chocolate Coffee" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:1rem;">
+                <h5>Chocolate Coffee</h5>
+                <p style="color:#6c757d;">Smooth chocolate flavor blended with premium coffee beans for a sweet indulgence.</p>
+                <p><strong>Origin:</strong> Ghana & Brazil | <strong>Roast:</strong> Dark</p>
+                <p><strong>Sizes:</strong> S $7 | M $8 | L $9</p>
+                <button style="background-color:#0d6efd; color:#fff; border:none; padding:0.25rem 0.75rem; font-size:0.875rem; border-radius:0.25rem; cursor:pointer;">Order Now</button>
+            </div>
+
+            <!-- Coffee Item 3 -->
+            <div style="flex:1 1 calc(33.333% - 1rem); background-color:#fff; padding:1.5rem; text-align:center; border-radius:0.5rem; box-shadow:0 0.25rem 0.5rem rgba(0,0,0,0.1); transition: all 0.3s ease; cursor:pointer;"
+                 onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.2)';" 
+                 onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0.25rem 0.5rem rgba(0,0,0,0.1)';" data-aos="fade-right" data-aos-delay="1200">
+                <img src="img/menu-3.jpg" alt="Coffee With Milk" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:1rem;">
+                <h5>Coffee With Milk</h5>
+                <p style="color:#6c757d;">Classic coffee blended with fresh milk for a creamy, smooth taste that everyone loves.</p>
+                <p><strong>Origin:</strong> Ethiopia | <strong>Roast:</strong> Light</p>
+                <p><strong>Sizes:</strong> S $6 | M $7 | L $8</p>
+                <button style="background-color:#0d6efd; color:#fff; border:none; padding:0.25rem 0.75rem; font-size:0.875rem; border-radius:0.25rem; cursor:pointer;">Order Now</button>
+            </div>
+        </div>
+
+        <!-- Cold Coffee -->
+        <h2 style="text-align:center; margin:3rem 0 2rem;" data-aos="fade-in" data-aos-delay="1400">Cold Coffee</h2>
+        <div style="display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:center;">
+            <!-- Reuse same style for cold coffee cards -->
+            <div style="flex:1 1 calc(33.333% - 1rem); background-color:#fff; padding:1.5rem; text-align:center; border-radius:0.5rem; box-shadow:0 0.25rem 0.5rem rgba(0,0,0,0.1); transition: all 0.3s ease; cursor:pointer;"
+                 onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.2)';" 
+                 onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0.25rem 0.5rem rgba(0,0,0,0.1)';" data-aos="fade-left" data-aos-delay="1600">
+                <img src="img/menu-1.jpg" alt="Iced Black Coffee" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:1rem;">
+                <h5>Iced Black Coffee</h5>
+                <p style="color:#6c757d;">Chilled, bold, and refreshing coffee to keep you energized on hot days.</p>
+                <p><strong>Origin:</strong> Colombia | <strong>Roast:</strong> Medium</p>
+                <p><strong>Sizes:</strong> S $5 | M $6 | L $7</p>
+                <button style="background-color:#0d6efd; color:#fff; border:none; padding:0.25rem 0.75rem; font-size:0.875rem; border-radius:0.25rem; cursor:pointer;">Order Now</button>
+            </div>
+
+            <div style="flex:1 1 calc(33.333% - 1rem); background-color:#fff; padding:1.5rem; text-align:center; border-radius:0.5rem; box-shadow:0 0.25rem 0.5rem rgba(0,0,0,0.1); transition: all 0.3s ease; cursor:pointer;"
+                 onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.2)';" 
+                 onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0.25rem 0.5rem rgba(0,0,0,0.1)';" data-aos="fade-left" data-aos-delay="1800">
+                <img src="img/menu-2.jpg" alt="Iced Chocolate Coffee" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:1rem;">
+                <h5>Iced Chocolate Coffee</h5>
+                <p style="color:#6c757d;">Sweet chocolatey iced coffee for a cool, indulgent treat.</p>
+                <p><strong>Origin:</strong> Ghana & Brazil | <strong>Roast:</strong> Dark</p>
+                <p><strong>Sizes:</strong> S $7 | M $8 | L $9</p>
+                <button style="background-color:#0d6efd; color:#fff; border:none; padding:0.25rem 0.75rem; font-size:0.875rem; border-radius:0.25rem; cursor:pointer;">Order Now</button>
+            </div>
+
+            <div style="flex:1 1 calc(33.333% - 1rem); background-color:#fff; padding:1.5rem; text-align:center; border-radius:0.5rem; box-shadow:0 0.25rem 0.5rem rgba(0,0,0,0.1); transition: all 0.3s ease; cursor:pointer;"
+                 onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.2)';" 
+                 onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0.25rem 0.5rem rgba(0,0,0,0.1)';" data-aos="fade-left" data-aos-delay="2000">
+                <img src="img/menu-3.jpg" alt="Iced Coffee With Milk" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:1rem;">
+                <h5>Iced Coffee With Milk</h5>
+                <p style="color:#6c757d;">Creamy iced coffee with fresh milk. Smooth, refreshing, and satisfying.</p>
+                <p><strong>Origin:</strong> Ethiopia | <strong>Roast:</strong> Light</p>
+                <p><strong>Sizes:</strong> S $6 | M $7 | L $8</p>
+                <button style="background-color:#0d6efd; color:#fff; border:none; padding:0.25rem 0.75rem; font-size:0.875rem; border-radius:0.25rem; cursor:pointer;">Order Now</button>
+            </div>
+        </div>
+    </div>
+</div>
+	<!-- Menu End -->
+
+    <!-- Footer Start -->
+    <div th:replace="~{base::Footer}"></div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <div th:replace="~{base::script}"></div>
+</body>
+</html>
